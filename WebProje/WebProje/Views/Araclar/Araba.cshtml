@@ -1,0 +1,106 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<WebProje.Entities.Arac>
+@section Resim{
+
+    <div id="sectionresimaraba">
+        <div id="sectionyazi" class="">
+            <div class="col-6">
+                <div key="1" style="text-shadow: 12px 5px 6px rgb(11, 23, 51);">Arabalar</div>
+            </div>
+            
+
+           
+            
+           
+            
+            
+
+        </div>
+    </div>
+
+   
+}
+
+<div id="body">
+     <div class="dropdown text-end text-black ">
+        <button key="18" id="filtre" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Filtrele
+              </button>
+              <ul  class="dropdown-menu">
+                    <li><div  class="btn  col-1  ">@Html.ActionLink("İlk Yüklenen", "Araba", new {  id=1,aracTur="araba" })</div></li>
+                    <li> <div class="btn  col-1 ">@Html.ActionLink("Son Yüklenen", "Araba", new {  id=2 ,aracTur="araba" })</div></li>
+                    <li><div class="btn  col-1 ">@Html.ActionLink("Yıl (Artan)", "Araba", new {  id=3,aracTur="araba" })</div></li>
+                    <li><div class="btn  col-1 ">@Html.ActionLink("Yıl (Azalan)", "Araba", new {  id=4 ,aracTur="araba"})</div></li>
+              </ul>
+            </div>
+
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div id="araclist" class="col-xl-6 col-sm-12 ">
+                <div id="arac">
+                     <div>
+                        <img id="aracresmi" src="@item.aracResmi" class="" alt="...">
+                            <div class="row text-start">
+                                <div class="col-4"></div>
+                                <div key="15" class="col-2">Marka</div>  :
+                                <div class="col-2">@Html.DisplayFor(model => item.marka)</div>
+                                        
+                            </div>
+                           <div class="row text-start">
+                                <div class="col-4"></div>
+                                <div class="col-2">Model</div>  :
+                                <div class="col-2">@Html.DisplayFor(model => item.model)</div>
+                                        
+                            </div>
+                           <div class="row text-start">
+                                <div class="col-4"></div>
+                                <div key="16" class="col-2">Yıl</div>  :
+                                <div class="col-2">@Html.DisplayFor(model => item.yil)</div>
+                                        
+                            </div>
+                           <div class="row text-start">
+                                <div class="col-4"></div>
+                                <div key="17" class="col-2">Renk</div>  :
+                                <div class="col-2">@Html.DisplayFor(model => item.renk)</div>
+                                        
+                            </div>
+                            <div class="row text-start text-center">
+                                <div class="col-4"></div>
+                                <div class="btn btn-success col-4 ">@Html.ActionLink("Rent", "Detay", new {  id=item.id })</div>
+                               
+                               
+                                        
+                            </div>
+                       
+                           
+                     </div>
+            
+            
+            </div> 
+        </div>
+        }
+        
+
+
+    </div>
+   
+   
+
+       
+       
+
+
+
+</div>
+  
+
+
+
+
